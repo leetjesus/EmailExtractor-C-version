@@ -7,24 +7,19 @@
 // Give the file name here
 int main(int argc, char *argv[]) {
 
+	// Datadump file
     FILE *file = fopen("intimshop.ru.sql", "r");
 
-    int file_count = NULL;
-
-
+    char buffer_character;
+    
     if (file == NULL) {
         perror("Error opening a file.");
         exit(EXIT_FAILURE);
     }
 
-    printf("File is now opened..\n");
-    
-
-    // Only get a section of the file
-    char buffer[100];
-
-    while(fgets(buffer, sizeof(buffer), file) != NULL){
-        printf("Read: %s", buffer); // Print each line
+    while ((buffer_character = fgetc(file)) != EOF) {
+        // so tech buffer_character represents a line 
+        printf("%c\n", buffer_character);
     }
 
     fclose(file);
