@@ -3,10 +3,10 @@
 
 int main(int argc, char *argv[]) {
     
-    if (argc <= 2) {
+    if (argc <= 0) {
         printf("Usage: %s <datadump_filename>\n", argv[0]);
         return 1;
-    } else if (argc > 3){
+    } else if (argc > 2){
         printf("To many command-line arguments specified\n");
         exit(EXIT_FAILURE);
     }
